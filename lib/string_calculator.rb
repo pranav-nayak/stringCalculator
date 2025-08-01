@@ -10,6 +10,8 @@ class StringCalculator
   private
 
   def digits(str)
-    str.gsub("\n", ',').split(',').map(&:to_i)
+    delimeter = str.start_with?("//") ? str[2,1] : /,|\n/
+    str.split(delimeter).map(&:to_i)
   end
+
 end

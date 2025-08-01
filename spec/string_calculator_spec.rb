@@ -45,6 +45,21 @@ describe StringCalculator do
     it "returns 3 for '1\n2'" do
       expect(@calc.add("1\n2")).to eq(3) 
     end
+
+    it "returns 6 for '1\n2,3'" do
+      expect(@calc.add("1\n2,3")).to eq(6) 
+    end
   end
+
+  context "supports given custom delimeters" do
+    it "allows ; as delimeter and returns 7 for '//;\n1;2;4'" do
+      expect(@calc.add("//;\n1;2;4")).to eq(7)
+    end
+
+    it "allows | as delimeter and returns 15 for '//|\n4|5|6'" do
+      expect(@calc.add("//|\n4|5|6")).to eq(15)
+    end
+  end
+  
   
 end
