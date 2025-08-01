@@ -40,5 +40,11 @@ describe StringCalculator do
       expect(@calc.add("20,"*100)).to  eq(2000)
     end
   end
+
+  context "given newline as delimeter" do
+    it "returns 3 for '1\n2'" do
+      expect(@calc.add("1\n2")).to eq(3) 
+    end
+  end
   
 end
