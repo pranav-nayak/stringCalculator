@@ -30,6 +30,15 @@ describe StringCalculator do
       expect(@calc.add("11,11")).to  eq(22)
     end
   end
-  
+
+  context "given many numbers" do
+    it "returns 15 for '1,2,3,4,5'" do
+      expect(@calc.add("1,2,3,4,5")).to  eq(15)
+    end
+
+    it "returns 2000 for '20'*100" do
+      expect(@calc.add("20,"*100)).to  eq(2000)
+    end
+  end
   
 end
