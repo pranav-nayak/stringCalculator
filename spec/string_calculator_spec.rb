@@ -61,5 +61,12 @@ describe StringCalculator do
     end
   end
   
-  
+  context "given negative numbers" do
+    it "raises an expecption with negatives numbers listed" do
+      lambda {
+        expect(@calc.add("1,-2,-3")).to raise_error(NegativeNumbersError, "negatives not allowed: -2, -3")
+        expect(@calc.add("//|\n4|5|-6|-2|-7")).to raise_error(NegativeNumbersError, "negatives not allowed: -6, -2, -7")
+      }
+    end
+  end
 end
