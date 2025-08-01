@@ -20,5 +20,16 @@ describe StringCalculator do
       expect(@calc.add("13")).to eq(13)
     end
   end
+
+  context "given two numbers" do
+    it "returns 5 for '2,3'" do
+      expect(@calc.add("2,3")).to  eq(5)
+    end
+
+    it "returns 22 for '11,11'" do
+      expect(@calc.add("11,11")).to  eq(22)
+    end
+  end
+  
   
 end
